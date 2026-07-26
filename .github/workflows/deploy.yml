@@ -1,20 +1,10 @@
 name: Deploy to GitHub Pages
 
-on:
-push:
-branches:
-- main
-- master
+on: push: branches: - main - master
 
-permissions:
-contents: write
+permissions: contents: write
 
-jobs:
-deploy:
-runs-on: ubuntu-latest
-steps:
-- name: Checkout codigo
-uses: actions/checkout@v4
+jobs: deploy: runs-on: ubuntu-latest steps: - name: Checkout código uses: actions/checkout@v4
 
   - name: Instalar Node.js
     uses: actions/setup-node@v4
@@ -24,7 +14,7 @@ uses: actions/checkout@v4
   - name: Instalar dependencias
     run: npm install
 
-  - name: Construir proyecto
+  - name: Construir proyecto (Build)
     run: npm run build
 
   - name: Publicar en GitHub Pages
