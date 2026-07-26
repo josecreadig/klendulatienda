@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sistema ERP - Vida Sana Redénsión</title>
+    
+    <!-- ✅ ESTA LÍNEA ES LA MAGIA: Activa todos los colores y diseños de Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Configuraciones extra de impresión para que no se corte el papel -->
+    <style>
+      @media print {
+        html, body {
+          height: auto !important;
+          overflow: visible !important;
+          background: white !important;
+        }
+        table { page-break-inside: auto; }
+        tr { page-break-inside: avoid; page-break-after: auto; }
+        thead { display: table-header-group; }
+      }
+    </style>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
