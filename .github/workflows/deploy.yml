@@ -1,4 +1,22 @@
-- name: Instalar Node.js
+name: Deploy to GitHub Pages
+
+on:
+push:
+branches:
+- main
+- master
+
+permissions:
+contents: write
+
+jobs:
+deploy:
+runs-on: ubuntu-latest
+steps:
+- name: Checkout codigo
+uses: actions/checkout@v4
+
+  - name: Instalar Node.js
     uses: actions/setup-node@v4
     with:
       node-version: 20
@@ -6,7 +24,7 @@
   - name: Instalar dependencias
     run: npm install
 
-  - name: Construir proyecto (Build)
+  - name: Construir proyecto
     run: npm run build
 
   - name: Publicar en GitHub Pages
